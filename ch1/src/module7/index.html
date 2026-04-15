@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <button onclick="showCount()">show count</button>
+    <script async type="module">
+        import { inc } from './counter.js';
+        inc();
+        console.log('第一个模块加载完成');
+    </script>
+    <script async type="module">
+        import { inc } from './counter.js';
+        inc();
+        console.log('第二个模块加载完成');
+    </script>
+    <script type="module">
+        import { get } from './counter.js';
+        function showCount() {
+            alert(get());
+        }
+        window.showCount = showCount;
+    </script>
+</body>
+
+</html>
